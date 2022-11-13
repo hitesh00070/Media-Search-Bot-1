@@ -26,20 +26,11 @@ DATABASE_NAME = 'Telegram'
 COLLECTION_NAME = 'channel_files'  # If you are using the same database, then use different collection name for each bot
 
 # Messages
-default_start_msg = """
-**Hi, I'm Media Search Bot or ypu can call me as Auto-Filter Bot**
-Here you can search files in Inline mode as well as PM, Use the below buttons to search files or send me the name of file to search.
+# Messages
+START_MSG = """
+**Hi, I'm Media Search bot**
+Here you can search files in inline mode. Just press follwing buttons and start searching.
 """
-START_MSG = environ.get('START_MSG', default_start_msg)
 
-BUTTON = environ.get("BUTTON",False)
-FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "")
-OMDB_API_KEY = environ.get("OMDB_API_KEY", "")
-if FILE_CAPTION.strip() == "":
-    CUSTOM_FILE_CAPTION=None
-else:
-    CUSTOM_FILE_CAPTION=FILE_CAPTION
-if OMDB_API_KEY.strip() == "":
-    API_KEY=None
-else:
-    API_KEY=OMDB_API_KEY
+SHARE_BUTTON_TEXT = 'Checkout {username} for searching files'
+INVITE_MSG = 'Please join @.... to use this bot'
