@@ -5,27 +5,25 @@ id_pattern = re.compile(r'^.\d+$')
 
 # Bot information
 SESSION = 'LeoMediaSearchBot'
+USER_SESSION = 'User_Bot'
 API_ID = 1706730
 API_HASH = '14a483d10b9191f077e1a954a131c59e'
-BOT_TOKEN = '5694017087:AAE850hxd3-VRerg7mYtjtzyv1ZJGUTWT_E'
+BOT_TOKEN = '5690605277:AAHYoufns6U8XiYIQP6kSYfIcnYCFV5cfN8'
 
 # Bot settings
-CACHE_TIME = int(environ.get('CACHE_TIME', 300))
-USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
+CACHE_TIME = 300
+USE_CAPTION_FILTER = False
 
 # Admins, Channels & Users
 ADMINS = ['@ravi00893']
 CHANNELS = [-1001840839823]
-auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
-AUTH_USERS = (auth_users + ADMINS) if auth_users else []
-auth_channel = environ.get('AUTH_CHANNEL')
-AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else auth_channel
-AUTH_GROUPS = [int(admin) for admin in environ.get("AUTH_GROUPS", "").split()]
+AUTH_USERS = []
+AUTH_CHANNEL = -1001814578073
 
 # MongoDB information
-DATABASE_URI = "mongodb+srv://cinee:cinee@cluster0.d5aveoz.mongodb.net/?retryWrites=true&w=majority"
+DATABASE_URI = "mongodb+srv://cinee:cinee@cluster0.vidvag8.mongodb.net/?retryWrites=true&w=majority"
 DATABASE_NAME = 'Telegram'
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
+COLLECTION_NAME = 'channel_files'  # If you are using the same database, then use different collection name for each bot
 
 # Messages
 default_start_msg = """
